@@ -1,0 +1,235 @@
+{
+  "extends": [
+    "react-app",
+    "airbnb",
+    "plugin:security/recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:react-hooks/recommended"
+  ],
+  "rules": {
+    "max-len": 1,
+    "no-await-in-loop": 0,
+    "comma-dangle": [
+      "error",
+      "always-multiline"
+    ],
+    "react/jsx-indent": [
+      "error",
+      2
+    ],
+    "react/jsx-indent-props": [
+      "error",
+      2
+    ],
+    "indent": 0,
+    "no-shadow": 0,
+    "no-console": [
+      "warn",
+      {
+        "allow": [
+          "warn",
+          "error"
+        ]
+      }
+    ],
+    "operator-linebreak": [
+      "error",
+      "after"
+    ],
+    "no-multiple-empty-lines": [
+      "error",
+      {
+        "max": 1
+      }
+    ],
+    "class-methods-use-this": 0,
+    "prefer-template": 0,
+    "import/no-unresolved": 0,
+    "import/extensions": [
+      "error",
+      "never",
+      {
+        "ignorePackages": false,
+        "pattern": {
+          "json": "always"
+        }
+      }
+    ],
+    "no-underscore-dangle": 0,
+    "jsx-a11y/anchor-is-valid": 0,
+    "jsx-a11y/click-events-have-key-events": 0,
+    "jsx-a11y/label-has-for": 0,
+    "jsx-a11y/no-static-element-interactions": 0,
+    "jsx-a11y/no-autofocus": 0,
+    "jsx-a11y/media-has-caption": 0,
+    "import/no-extraneous-dependencies": [
+      "error",
+      {
+        "devDependencies": true
+      }
+    ],
+    "prefer-destructuring": 0,
+    "function-paren-newline": 0,
+    "security/detect-object-injection": 0,
+    "new-cap": 0,
+    "no-invalid-this": 0,
+    "object-curly-spacing": 0,
+    "quotes": 0,
+    "semi": 0,
+    "no-unused-expressions": 0,
+    "valid-typeof": 0,
+    "babel/new-cap": [
+      "error",
+      {
+        "newIsCap": true,
+        "newIsCapExceptions": [],
+        "capIsNew": false,
+        "capIsNewExceptions": [
+          "Immutable.Map",
+          "Immutable.Set",
+          "Immutable.List"
+        ]
+      }
+    ],
+    "babel/no-invalid-this": "error",
+    "babel/object-curly-spacing": [
+      "error",
+      "always"
+    ],
+    "babel/quotes": [
+      "error",
+      "single",
+      {
+        "avoidEscape": true
+      }
+    ],
+    "babel/semi": [
+      "error",
+      "always"
+    ],
+    "babel/no-unused-expressions": "error",
+    "babel/valid-typeof": "error",
+    "react/jsx-wrap-multilines": [
+      "error",
+      {
+        "declaration": "parens-new-line",
+        "assignment": "parens-new-line",
+        "return": "parens-new-line",
+        "arrow": "parens-new-line",
+        "condition": "ignore",
+        "logical": "ignore",
+        "prop": "ignore"
+      }
+    ],
+    "jsx-a11y/label-has-associated-control": 1,
+    "object-curly-newline": 1,
+    "react/button-has-type": 1,
+    "react/destructuring-assignment": [
+      1,
+      "always",
+      {
+        "ignoreClassFields": true
+      }
+    ],
+    "react/no-access-state-in-setstate": 1,
+    "react/prop-types": 1,
+    "react/sort-comp": 1,
+    "react/no-danger": 1,
+    "react/jsx-filename-extension": [
+      1,
+      {
+        "extensions": [
+          ".jsx",
+          ".tsx"
+        ]
+      }
+    ],
+    "react/jsx-curly-newline": 0,
+    "react/jsx-props-no-spreading": 0,
+    "react/jsx-fragments": 1,
+    "react/jsx-one-expression-per-line": 0,
+    "react/static-property-placement": 1,
+    "react/jsx-curly-brace-presence": 0,
+    "react/state-in-constructor": 0,
+    "react/require-default-props": 0,
+    "react/jsx-uses-react": "off",
+    "react/react-in-jsx-scope": "off",
+    // "no-mutating-sorts": "error",
+    "security/detect-non-literal-regexp": 0,
+    "security/detect-unsafe-regex": 0,
+    "security/detect-non-literal-fs-filename": 0,
+    "implicit-arrow-linebreak": 0,
+    "lines-between-class-members": "off",
+    "arrow-parens": [
+      1,
+      "as-needed",
+      {
+        "requireForBlockBody": true
+      }
+    ],
+    "max-classes-per-file": 0,
+    "@typescript-eslint/indent": [
+      "error",
+      2,
+      {
+        "SwitchCase": 0
+      }
+    ],
+    "no-use-before-define": "off",
+    "@typescript-eslint/no-use-before-define": [
+      "error"
+    ],
+    "@typescript-eslint/explicit-function-return-type": 0,
+    "@typescript-eslint/prefer-interface": 0,
+    "@typescript-eslint/no-inferrable-types": 1,
+    "@typescript-eslint/no-unused-vars": 1,
+    "@typescript-eslint/no-empty-function": 0,
+    "@typescript-eslint/no-shadow": 1,
+    "@typescript-eslint/ban-types": 1,
+    "@typescript-eslint/explicit-module-boundary-types": 0,
+    "react-hooks/exhaustive-deps": 1,
+    "no-unexpected-multiline": "warn",
+    "graphql/required-fields": [
+      "warn",
+      {
+        "env": "apollo",
+        "schemaJsonFilepath": "./schema.json",
+        "requiredFields": [
+          "id"
+        ]
+      }
+    ],
+    "graphql/named-operations": [
+      "warn",
+      {
+        "env": "apollo",
+        "schemaJsonFilepath": "./schema.json"
+      }
+    ]
+  },
+  "overrides": [
+    {
+      "files": [
+        "**/*.ts?(x)"
+      ],
+      "rules": {
+        "@typescript-eslint/explicit-function-return-type": [
+          0,
+          {
+            "allowExpressions": true
+          }
+        ],
+        "@typescript-eslint/explicit-module-boundary-types": 1
+      }
+    }
+  ],
+  "plugins": [
+    "babel",
+    "react",
+    "jsx-a11y",
+    "security",
+    "@typescript-eslint",
+    "graphql",
+    "react-hooks"
+  ]
+}
