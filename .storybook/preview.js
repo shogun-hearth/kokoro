@@ -1,5 +1,30 @@
+import { ThemeProvider as MUIThemeProvider } from '@mui/material/styles';
+import { ThemeProvider } from 'emotion-theming';
+
+import theme from '../src/assets/theme';
+
 // https://storybook.js.org/docs/react/writing-stories/parameters#global-parameters
 export const parameters = {
-  // https://storybook.js.org/docs/react/essentials/actions#automatically-matching-args
   actions: { argTypesRegex: '^on.*' },
+  layout: 'centered',
+  argTypes: {
+    color: {
+      value: 'basic1100',
+      control: { type: 'select' },
+      options: Object.keys({ ...theme.palette.common }),
+      mapping: Object.keys({ ...theme.palette.common }).reduce((mapping, colorKey) => ({
+        ...mapping, [colorKey]: theme.palette.common[colorKey],
+      })),
+    },
+  },
 };
+
+export const decorators = [
+  (Story) => (
+    <MUIThemeProvider theme={theme}>
+      <ThemeProvider theme={theme}>
+        {Story()}
+      </ThemeProvider>
+    </MUIThemeProvider>
+  )
+];

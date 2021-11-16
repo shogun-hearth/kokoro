@@ -1,8 +1,22 @@
 module.exports = {
-  stories: ['../stories/**/*.stories.@(ts|tsx|js|jsx)'],
-  addons: ['@storybook/addon-links', '@storybook/addon-essentials'],
+  stories: ['../src/**/*.stor@(y|ies).@(tsx|ts|mdx)'],
+  addons: [
+    '@storybook/addon-links',
+    '@storybook/addon-essentials',
+    '@storybook/addon-controls',
+    '@storybook/preset-create-react-app',
+    'storybook-addon-designs'
+  ],
   // https://storybook.js.org/docs/react/configure/typescript#mainjs-configuration
   typescript: {
-    check: true, // type-check stories during Storybook build
-  }
+    check: true,
+    reactDocgen: 'none',
+    reactDocgenTypescriptOptions: {
+      shouldExtractLiteralValuesFromEnum: true,
+      propFilter: prop => (prop.parent ? !/node_modules/.test(prop.parent.fileName) : true),
+    },
+  },
+  core: {
+    builder: 'webpack5',
+  },
 };
