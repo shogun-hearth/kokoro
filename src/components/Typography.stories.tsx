@@ -41,7 +41,7 @@ const typographyArgs = (variant: TypographyProps['variant']): TypographyMetadata
       return {
         type: 'Heading',
         size: 24,
-        lineHeight: 28,
+        lineHeight: 36,
       };
     case 'h2':
       return {
