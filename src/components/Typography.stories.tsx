@@ -2,7 +2,7 @@ import { Meta } from '@storybook/react';
 import { Box } from '@mui/material';
 import { withDesign } from 'storybook-addon-designs';
 
-import Typography, { TypographyProps, FontWeight, fontWeightValues } from './Typography';
+import Typography, { TypographyProps, fontWeights } from './Typography';
 
 export default {
   title: 'UI Elements/Typography',
@@ -13,8 +13,8 @@ export default {
   },
   argTypes: {
     weight: {
-      options: [FontWeight.REGULAR, FontWeight.MEDIUM, FontWeight.SEMIBOLD],
-      defaultValue: FontWeight.REGULAR,
+      options: ['regular', 'medium', 'semibold'],
+      defaultValue: 'regular',
       control: 'radio',
     },
     children: {
@@ -82,12 +82,12 @@ export const typography = ({ children, ...args }: TypographyProps): JSX.Element 
           </Typography>
           <Box sx={{ mt: 0.5 }}>
             <Typography
-              color="basic500"
-              weight={FontWeight.REGULAR}
+              color="basic300"
+              weight="regular"
               sx={{ fontSize: 14 }}
             >
               {size}pt |{' '}
-              {args.weight} {args.weight ? `(${fontWeightValues[args.weight]})` : ''},
+              {args.weight} {args.weight ? `(${fontWeights[args.weight]})` : ''},
               LH {lineHeight}
             </Typography>
           </Box>

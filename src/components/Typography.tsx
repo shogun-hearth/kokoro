@@ -3,39 +3,41 @@ import { TypographyProps as MuiTypographyProps } from '@mui/material/Typography'
 import { makeStyles } from '@mui/styles';
 import cx from 'classnames';
 
-export enum FontWeight {
-  REGULAR = 'regular',
-  MEDIUM = 'medium',
-  SEMIBOLD = 'semibold',
-}
 
-export const fontWeightValues: Record<FontWeight, number> = {
-  [FontWeight.REGULAR]: 400,
-  [FontWeight.MEDIUM]: 500,
-  [FontWeight.SEMIBOLD]: 600,
+export type FontWeightVariant = 'regular' | 'medium' | 'semibold';
+export type FontWeightValue = 400 | 500 | 600;
+
+type FontWeight = {
+  [w in FontWeightVariant]: FontWeightValue;
+};
+
+export const fontWeights: FontWeight = {
+  regular: 400,
+  medium: 500,
+  semibold: 600,
 };
 
 type StyleProps = {
-  weight: FontWeight;
-  color: Color;
+  weight?: FontWeightVariant;
+  color?: Color;
 }
 
 const useStyles = makeStyles<Theme, StyleProps>({
   overrides: ({ weight, color }) => ({
-    fontWeight: fontWeightValues[weight],
-    color,
+    fontWeight: weight ? fontWeights[weight] : 'inherit',
+    color: color ?? 'inherit',
   }),
 });
 
 export type TypographyProps = {
-  weight?: FontWeight;
+  weight?: FontWeightVariant;
   color?: Color;
 } & MuiTypographyProps;
 
 const Typography = ({
-  weight = FontWeight.REGULAR,
+  weight,
   children,
-  color = 'basic1100',
+  color,
   ...props
 }: TypographyProps): JSX.Element => {
   const classes = useStyles({ weight, color });
