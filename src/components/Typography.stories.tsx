@@ -9,6 +9,7 @@ export default {
   decorators: [withDesign],
   component: Typography,
   parameters: {
+    actions: { disabled: true },
     layout: 'padded',
   },
   argTypes: {
