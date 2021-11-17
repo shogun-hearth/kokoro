@@ -1,4 +1,5 @@
 declare type Color =
+  'inherit' |
   'basic100' |
   'basic300' |
   'basic500' |

@@ -95,7 +95,7 @@ const theme = createTheme({
     // TODO(design_system): add responsive sizes for breakpoints
     h1: {
       fontSize: pxToRem(24),
-      lineHeight: pxToRem(28),
+      lineHeight: pxToRem(36),
     },
     h2: {
       fontSize: pxToRem(20),
