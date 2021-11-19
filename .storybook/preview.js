@@ -1,4 +1,5 @@
 import { ThemeProvider as MUIThemeProvider } from '@mui/material/styles';
+import { StylesProvider } from '@mui/styles';
 import { ThemeProvider } from 'emotion-theming';
 
 import theme from '../src/assets/theme';
@@ -17,14 +18,29 @@ export const parameters = {
       })),
     },
   },
+  backgrounds: {
+    default: 'light blue',
+    values: [
+      {
+        name: 'light blue',
+        value: '#F4F6F9',
+      },
+      {
+        name: 'white',
+        value: '#ffffff',
+      },
+    ],
+  },
 };
 
 export const decorators = [
   (Story) => (
-    <MUIThemeProvider theme={theme}>
-      <ThemeProvider theme={theme}>
-        {Story()}
-      </ThemeProvider>
-    </MUIThemeProvider>
+    <StylesProvider injectFirst>
+      <MUIThemeProvider theme={theme}>
+        <ThemeProvider theme={theme}>
+          {Story()}
+        </ThemeProvider>
+      </MUIThemeProvider>
+    </StylesProvider>
   )
 ];

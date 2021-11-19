@@ -125,14 +125,36 @@ const theme = createTheme({
     overline: undefined,
     button: undefined,
   },
-  components: {
-    MuiTypography: {
-      defaultProps: {
-        fontFamily: "'Poppins', sans-serif, 'Lora', serif",
+});
+
+theme.components = {
+  MuiTypography: {
+    defaultProps: {
+      fontFamily: "'Poppins', sans-serif, 'Lora', serif",
+    },
+  },
+  MuiCard: {
+    styleOverrides: {
+      root: {
+        borderRadius: 4,
       },
     },
   },
-});
+  MuiCardHeader: {
+    styleOverrides: {
+      root: {
+        alignItems: 'center',
+      },
+    },
+  },
+  MuiDivider: {
+    styleOverrides: {
+      root: {
+        color: colors.basic700,
+      },
+    },
+  },
+};
 
 export default theme;
 
