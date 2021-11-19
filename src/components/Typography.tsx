@@ -1,8 +1,8 @@
+import React from 'react';
 import { Theme, Typography as MuiTypography } from '@mui/material';
 import { TypographyProps as MuiTypographyProps } from '@mui/material/Typography';
 import { makeStyles } from '@mui/styles';
 import cx from 'classnames';
-
 
 export type FontWeightVariant = 'regular' | 'medium' | 'semibold';
 export type FontWeightValue = 400 | 500 | 600;
@@ -29,10 +29,10 @@ const useStyles = makeStyles<Theme, StyleProps>({
   }),
 });
 
-export type TypographyProps = {
+export interface TypographyProps extends MuiTypographyProps {
   weight?: FontWeightVariant;
   color?: Color;
-} & MuiTypographyProps;
+}
 
 const Typography = ({
   weight,

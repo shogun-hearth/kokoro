@@ -1,3 +1,4 @@
+import React from 'react';
 import { Meta } from '@storybook/react';
 import { Box } from '@mui/material';
 import { withDesign } from 'storybook-addon-designs';
@@ -5,7 +6,7 @@ import { withDesign } from 'storybook-addon-designs';
 import Typography, { TypographyProps, fontWeights } from './Typography';
 
 export default {
-  title: 'UI Elements/Typography',
+  title: 'Atoms/Typography',
   decorators: [withDesign],
   component: Typography,
   parameters: {
