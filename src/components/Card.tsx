@@ -15,10 +15,7 @@ const Card = ({
   children,
   bg = 'basic100',
   ...props
-}: CardProps): JSX.Element => {
-  console.log('excuse me', border, bg);
-
-  return (
+}: CardProps): JSX.Element => (
     <MuiCard
       elevation={0}
       css={
@@ -32,6 +29,6 @@ const Card = ({
     >
       {children}
     </MuiCard>
-  );
-};
+);
+
 export default Card;
