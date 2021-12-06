@@ -52,7 +52,7 @@ declare module '@mui/material/styles/createPalette' {
 const pxToRem = createTheme().typography.pxToRem;
 
 // TODO(design_system): put these exports in another module, possibly
-export const colors = {
+export const colors: Record<Color, string | undefined> = {
   // grayscale
   basic100: '#FFFFFF',
   basic300: '#F4F6F9',
@@ -84,6 +84,8 @@ export const colors = {
   danger500: '#F84647',
   danger700: '#C9393A',
   danger900: '#7A2223',
+  inherit: undefined,
+  transparent: undefined,
 };
 
 const theme = createTheme({
@@ -136,6 +138,7 @@ theme.components = {
   MuiCard: {
     styleOverrides: {
       root: {
+        fontFamily: "'Poppins', sans-serif, 'Lora', serif",
         borderRadius: 4,
       },
     },

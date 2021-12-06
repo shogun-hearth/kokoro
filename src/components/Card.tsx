@@ -3,6 +3,8 @@ import { Card as MuiCard } from '@mui/material';
 import { css } from '@emotion/react';
 import { CardProps as MuiCardProps } from '@mui/material/Card';
 
+import { colors } from '../assets/theme';
+
 export interface CardColorProperty {
   border?: Color;
   bg?: Color;
@@ -20,9 +22,9 @@ const Card = ({
       elevation={0}
       css={
         css`
-        border: ${border ? `1px solid ${border}` : 'inherit'};
+        border: ${border ? `1px solid ${colors[border]}` : 'inherit'};
         &.MuiPaper-root {
-          background-color: ${bg};
+          background-color: ${colors[bg]};
         }
       `}
       {...props}

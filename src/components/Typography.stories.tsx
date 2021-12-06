@@ -1,33 +1,61 @@
 import React from 'react';
-import { Meta } from '@storybook/react';
+import { ComponentMeta } from '@storybook/react';
 import { Box } from '@mui/material';
 import { withDesign } from 'storybook-addon-designs';
 
 import Typography, { TypographyProps, fontWeights } from './Typography';
+import theme from '../assets/theme';
+
+export const argTypes = {
+  color: {
+    defaultValue: 'basic1100',
+    table: {
+      defaultValue: {
+        summary: 'basic1100',
+      },
+    },
+    control: { type: 'select' },
+    options: Object.keys({ ...theme.palette.common }),
+  },
+  weight: {
+    options: ['regular', 'medium', 'semibold'],
+    defaultValue: 'regular',
+    control: { type: 'radio' },
+    table: {
+      type: {
+        summary: '"regular" | "medium" | "semibold"',
+      },
+      defaultValue: {
+        summary: 'regular',
+      },
+    },
+  },
+  children: {
+    name: 'children',
+    type: { required: true, name: 'children' },
+    defaultValue: 'Hello world!',
+    table: {
+      type: {
+        summary: 'string or ReactNode',
+      },
+    },
+    control: {
+      type: 'text',
+    },
+  },
+};
 
 export default {
-  title: 'Atoms/Typography',
+  title: 'Tokens/Typography',
   decorators: [withDesign],
+  includeStories: [],
   component: Typography,
   parameters: {
     actions: { disabled: true },
     layout: 'padded',
   },
-  argTypes: {
-    weight: {
-      options: ['regular', 'medium', 'semibold'],
-      defaultValue: 'regular',
-      control: 'radio',
-    },
-    children: {
-      name: 'content',
-      type: 'text',
-      control: {
-        type: 'text',
-      },
-    },
-  },
-} as Meta;
+  argTypes: argTypes,
+} as ComponentMeta<typeof Typography>;
 
 const variants: TypographyProps['variant'][] = ['h1', 'h2', 'p1', 'p2', 'p3'];
 
@@ -73,6 +101,10 @@ const typographyArgs = (variant: TypographyProps['variant']): TypographyMetadata
   }
 };
 
+export const typographyPlayground = (args: TypographyProps): JSX.Element => (
+  <Typography {...args} />
+);
+
 export const typography = ({ children, ...args }: TypographyProps): JSX.Element => (
   <Box sx={{ display: 'flex', flexDirection: 'column', padding: 4 }}>
     {variants.map(variantName => {
@@ -84,7 +116,6 @@ export const typography = ({ children, ...args }: TypographyProps): JSX.Element 
           </Typography>
           <Box sx={{ mt: 0.5 }}>
             <Typography
-              color="basic300"
               weight="regular"
               sx={{ fontSize: 14 }}
             >

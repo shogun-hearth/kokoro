@@ -5,7 +5,8 @@ module.exports = {
     '@storybook/addon-essentials',
     '@storybook/addon-controls',
     'storybook-addon-designs',
-    '@storybook/addon-backgrounds'
+    '@storybook/addon-backgrounds',
+    '@storybook/addon-docs',
   ],
   // https://storybook.js.org/docs/react/configure/typescript#mainjs-configuration
   typescript: {

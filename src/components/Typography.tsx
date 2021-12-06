@@ -4,6 +4,8 @@ import { TypographyProps as MuiTypographyProps } from '@mui/material/Typography'
 import { makeStyles } from '@mui/styles';
 import cx from 'classnames';
 
+import { colors } from '../assets/theme';
+
 export type FontWeightVariant = 'regular' | 'medium' | 'semibold';
 export type FontWeightValue = 400 | 500 | 600;
 
@@ -25,7 +27,7 @@ type StyleProps = {
 const useStyles = makeStyles<Theme, StyleProps>({
   overrides: ({ weight, color }) => ({
     fontWeight: weight ? fontWeights[weight] : 'inherit',
-    color: color ?? 'inherit',
+    color: color ? colors[color] : 'inherit',
   }),
 });
 
