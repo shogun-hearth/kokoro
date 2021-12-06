@@ -36,7 +36,7 @@
     "singleQuote": true,
     "trailingComma": "es5"
   },
-  "name": "kokoro",
+  "name": "@hearth/kokoro",
   "author": "Sondhayni",
   "module": "dist/kokoro.esm.js",
   "size-limit": [
