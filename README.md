@@ -1,181 +1,77 @@
-# TSDX React w/ Storybook User Guide
+[![Netlify Status](https://api.netlify.com/api/v1/badges/97b786c8-8342-4962-bd67-c95cd0ae7d9c/deploy-status)](https://app.netlify.com/sites/hearth-kokoro/deploys)
 
-Congrats! You just saved yourself hours of work by bootstrapping this project with TSDX. Let’s get you oriented with what’s here and how to use it.
+# Kokoro | Hearth Design System
 
-> This TSDX setup is meant for developing React component libraries (not apps!) that can be published to NPM. If you’re looking to build a React-based app, you should use `create-react-app`, `razzle`, `nextjs`, `gatsby`, or `react-static`.
+[Figma](https://www.figma.com/file/M7Z0RpYEQszVSWhAFs2yAe/Design-System?node-id=38%3A2) | [Notion](https://www.notion.so/gethearth/Kokoro-Hearth-s-Design-System-f925086806a24898897786379cbc17dc) |
 
-> If you’re new to TypeScript and React, checkout [this handy cheatsheet](https://github.com/sw-yx/react-typescript-cheatsheet/)
+Bootstrapped with [`tsdx`](https://github.com/jaredpalmer/tsdx), using the provided [`react-with-storybook`](https://github.com/jaredpalmer/tsdx/blob/master/templates/react-with-storybook/README.md) template. This repository maintains the component library for Hearth's web (and eventually mobile) app and overall style guide. Kokoro is meant to be an atomic design system.
 
-## Commands
+---
 
-TSDX scaffolds your new library inside `/src`, and also sets up a [Parcel-based](https://parceljs.org) playground for it inside `/example`.
+<br />
+
+## Getting started
+
+<br />
+
+[![Material UI v5](https://img.shields.io/badge/Material%20UI-v5-blue?style=for-the-badge)]((https://mui.com/))
+[![React v17](https://img.shields.io/badge/react-v17-brightgreen?style=for-the-badge)]((https://reactjs.org/))
+[![@emotion/react](https://img.shields.io/badge/%40emotion%2Freact-v11-ff69b4?style=for-the-badge)]((https://emotion.sh/docs/introduction))
+[![TypeScript v4+](https://img.shields.io/badge/TypeScript-v4%2B-dodgerblue?style=for-the-badge)](https://www.typescriptlang.org/)
+
+Clone this repository with `SSH`:
+```
+git clone git@github.com:shogun-hearth/kokoro.git
+```
+
+Install dependencies:
+```
+npm install
+```
+
+---
+
+<br />
+
+## Recommended workflows
 
 The recommended workflow is to run TSDX in one terminal:
 
 ```bash
-npm start # or yarn start
+npm start
 ```
 
 This builds to `/dist` and runs the project in watch mode so any edits you save inside `src` causes a rebuild to `/dist`.
 
-Then run either Storybook or the example playground:
-
-### Storybook
-
-Run inside another terminal:
+Then run Storybook inside another terminal:
 
 ```bash
-yarn storybook
+npm run storybook
 ```
 
-This loads the stories from `./stories`.
+This loads the stories from `./src/components`. A tab should automatically open with Storybook running, but if it doesn't, navigate to `localhost:6006`.
 
-> NOTE: Stories should reference the components as if using the library, similar to the example playground. This means importing from the root project directory. This has been aliased in the tsconfig and the storybook webpack config as a helper.
+---
 
-### Example
+<br />
 
-Then run the example inside another:
+## Contributing
 
-```bash
-cd example
-npm i # or yarn to install dependencies
-npm start # or yarn start
-```
+- Use named exports for all components that we want to surface as a part of the package
+- Fill out the MDX template to ensure all components are well documented
+- Add a unit test for each component added
 
-The default example imports and live reloads whatever is in `/dist`, so if you are seeing an out of date component, make sure TSDX is running in watch mode like we recommend above. **No symlinking required**, we use [Parcel's aliasing](https://parceljs.org/module_resolution.html#aliases).
+---
 
-To do a one-off build, use `npm run build` or `yarn build`.
+<br />
 
-To run tests, use `npm test` or `yarn test`.
-
-## Configuration
-
-Code quality is set up for you with `prettier`, `husky`, and `lint-staged`. Adjust the respective fields in `package.json` accordingly.
+## Bookkeeping
 
 ### Jest
 
-Jest tests are set up to run with `npm test` or `yarn test`.
+Jest tests are set up to run with `npm test`, but no tests have been implemented _yet_.
 
-### Bundle analysis
+### Continuous Integration
 
-Calculates the real cost of your library using [size-limit](https://github.com/ai/size-limit) with `npm run size` and visulize it with `npm run analyze`.
+Deployed to Netlify on each push. Working on setting up a proper deployment policy.
 
-#### Setup Files
-
-This is the folder structure we set up for you:
-
-```txt
-/example
-  index.html
-  index.tsx       # test your component here in a demo app
-  package.json
-  tsconfig.json
-/src
-  index.tsx       # EDIT THIS
-/test
-  blah.test.tsx   # EDIT THIS
-/stories
-  Thing.stories.tsx # EDIT THIS
-/.storybook
-  main.js
-  preview.js
-.gitignore
-package.json
-README.md         # EDIT THIS
-tsconfig.json
-```
-
-#### React Testing Library
-
-We do not set up `react-testing-library` for you yet, we welcome contributions and documentation on this.
-
-### Rollup
-
-TSDX uses [Rollup](https://rollupjs.org) as a bundler and generates multiple rollup configs for various module formats and build settings. See [Optimizations](#optimizations) for details.
-
-### TypeScript
-
-`tsconfig.json` is set up to interpret `dom` and `esnext` types, as well as `react` for `jsx`. Adjust according to your needs.
-
-## Continuous Integration
-
-### GitHub Actions
-
-Two actions are added by default:
-
-- `main` which installs deps w/ cache, lints, tests, and builds on all pushes against a Node and OS matrix
-- `size` which comments cost comparison of your library on every pull request using [size-limit](https://github.com/ai/size-limit)
-
-## Optimizations
-
-Please see the main `tsdx` [optimizations docs](https://github.com/palmerhq/tsdx#optimizations). In particular, know that you can take advantage of development-only optimizations:
-
-```js
-// ./types/index.d.ts
-declare var __DEV__: boolean;
-
-// inside your code...
-if (__DEV__) {
-  console.log('foo');
-}
-```
-
-You can also choose to install and use [invariant](https://github.com/palmerhq/tsdx#invariant) and [warning](https://github.com/palmerhq/tsdx#warning) functions.
-
-## Module Formats
-
-CJS, ESModules, and UMD module formats are supported.
-
-The appropriate paths are configured in `package.json` and `dist/index.js` accordingly. Please report if any issues are found.
-
-## Deploying the Example Playground
-
-The Playground is just a simple [Parcel](https://parceljs.org) app, you can deploy it anywhere you would normally deploy that. Here are some guidelines for **manually** deploying with the Netlify CLI (`npm i -g netlify-cli`):
-
-```bash
-cd example # if not already in the example folder
-npm run build # builds to dist
-netlify deploy # deploy the dist folder
-```
-
-Alternatively, if you already have a git repo connected, you can set up continuous deployment with Netlify:
-
-```bash
-netlify init
-# build command: yarn build && cd example && yarn && yarn build
-# directory to deploy: example/dist
-# pick yes for netlify.toml
-```
-
-## Named Exports
-
-Per Palmer Group guidelines, [always use named exports.](https://github.com/palmerhq/typescript#exports) Code split inside your React app instead of your React library.
-
-## Including Styles
-
-There are many ways to ship styles, including with CSS-in-JS. TSDX has no opinion on this, configure how you like.
-
-For vanilla CSS, you can include it at the root directory and add it to the `files` section in your `package.json`, so that it can be imported separately by your users and run through their bundler's loader.
-
-## Publishing to NPM
-
-We recommend using [np](https://github.com/sindresorhus/np).
-
-## Usage with Lerna
-
-When creating a new package with TSDX within a project set up with Lerna, you might encounter a `Cannot resolve dependency` error when trying to run the `example` project. To fix that you will need to make changes to the `package.json` file _inside the `example` directory_.
-
-The problem is that due to the nature of how dependencies are installed in Lerna projects, the aliases in the example project's `package.json` might not point to the right place, as those dependencies might have been installed in the root of your Lerna project.
-
-Change the `alias` to point to where those packages are actually installed. This depends on the directory structure of your Lerna project, so the actual path might be different from the diff below.
-
-```diff
-   "alias": {
--    "react": "../node_modules/react",
--    "react-dom": "../node_modules/react-dom"
-+    "react": "../../../node_modules/react",
-+    "react-dom": "../../../node_modules/react-dom"
-   },
-```
-
-An alternative to fixing this problem would be to remove aliases altogether and define the dependencies referenced as aliases as dev dependencies instead. [However, that might cause other problems.](https://github.com/palmerhq/tsdx/issues/64)
