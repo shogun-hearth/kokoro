@@ -8,8 +8,6 @@ Bootstrapped with [`tsdx`](https://github.com/jaredpalmer/tsdx), using the provi
 
 ---
 
-<br />
-
 ## Getting started
 
 <br />
@@ -31,8 +29,6 @@ npm install
 
 ---
 
-<br />
-
 ## Recommended workflows
 
 The recommended workflow is to run TSDX in one terminal:
@@ -53,17 +49,12 @@ This loads the stories from `./src/components`. A tab should automatically open 
 
 ---
 
-<br />
-
 ## Contributing
 
 - Use named exports for all components that we want to surface as a part of the package
 - Fill out the MDX template to ensure all components are well documented
 - Add a unit test for each component added
 
----
-
-<br />
 
 ## Bookkeeping
 
