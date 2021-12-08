@@ -1,0 +1,18 @@
+{
+  "source": ["tokens/**/*.json"],
+  "platforms": {
+    "hearth-web": {
+      "transformGroup": "js",
+      "files": [
+        {
+          "format": "javascript/es6",
+          "destination": "colors.js"
+        },
+        {
+          "format": "typescript/es6-declarations",
+          "destination": "colors.d.ts"
+        }
+      ]
+    }
+  }
+}
