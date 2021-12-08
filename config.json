@@ -3,10 +3,11 @@
   "platforms": {
     "hearth-web": {
       "transformGroup": "js",
+      "transforms": ["name/ti/camel", "attribute/cti"],
       "files": [
         {
           "format": "javascript/es6",
-          "destination": "colors.js",
+          "destination": "tokens/colors.js",
           "filter": {
             "attributes": {
               "category": "color"
@@ -15,7 +16,7 @@
         },
         {
           "format": "typescript/es6-declarations",
-          "destination": "colors.d.ts",
+          "destination": "tokens/colors.d.ts",
           "filter": {
             "attributes": {
               "category": "color"
@@ -24,7 +25,7 @@
         },
         {
           "format": "javascript/es6",
-          "destination": "spacing.js",
+          "destination": "tokens/spacing.js",
           "filter": {
             "attributes": {
               "category": "spacing"
@@ -33,7 +34,7 @@
         },
         {
           "format": "typescript/es6-declarations",
-          "destination": "spacing.d.ts",
+          "destination": "tokens/spacing.d.ts",
           "filter": {
             "attributes": {
               "category": "spacing"
