@@ -1,6 +1,7 @@
 /**
  * Do not edit directly
- * Generated on Wed, 08 Dec 2021 06:31:06 GMT
+ * Generated on Wed, 08 Dec 2021 07:20:00 GMT
  */
 
 export const Spacing8 : any;
+export const ColorBlue500 : string;
