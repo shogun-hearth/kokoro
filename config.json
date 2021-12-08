@@ -6,19 +6,39 @@
       "files": [
         {
           "format": "javascript/es6",
-          "destination": "colors.js"
+          "destination": "colors.js",
+          "filter": {
+            "attributes": {
+              "category": "color"
+            }
+          }
         },
         {
           "format": "typescript/es6-declarations",
-          "destination": "colors.d.ts"
+          "destination": "colors.d.ts",
+          "filter": {
+            "attributes": {
+              "category": "color"
+            }
+          }
         },
         {
           "format": "javascript/es6",
-          "destination": "spacing.js"
+          "destination": "spacing.js",
+          "filter": {
+            "attributes": {
+              "category": "spacing"
+            }
+          }
         },
         {
           "format": "typescript/es6-declarations",
-          "destination": "spacing.d.ts"
+          "destination": "spacing.d.ts",
+          "filter": {
+            "attributes": {
+              "category": "spacing"
+            }
+          }
         }
       ]
     }
