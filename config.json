@@ -7,7 +7,7 @@
       "files": [
         {
           "format": "javascript/es6",
-          "destination": "tokens/colors.js",
+          "destination": "tokens/colors.ts",
           "filter": {
             "attributes": {
               "category": "color"
@@ -25,7 +25,7 @@
         },
         {
           "format": "javascript/es6",
-          "destination": "tokens/spacing.js",
+          "destination": "tokens/spacing.ts",
           "filter": {
             "attributes": {
               "category": "spacing"
