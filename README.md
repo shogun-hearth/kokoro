@@ -46,6 +46,15 @@ npm run storybook
 ```
 
 This loads the stories from `./src/components`. A tab should automatically open with Storybook running, but if it doesn't, navigate to `localhost:6006`.
+<br />
+
+## Resources
+- [Storybook](https://storybook.js.org/)
+    - [Rich docs with MDX](https://storybook.js.org/blog/rich-docs-with-storybook-mdx/)
+- [What is Atomic Design?](https://xd.adobe.com/ideas/process/ui-design/atomic-design-principles-methodology-101/)
+- Design system examples:
+    - [Gamut (Codecademy's design system)](https://gamut.codecademy.com/?path=/docs/atoms-card--card)
+    - [Storybook's Storybook](https://next--storybookjs.netlify.app/official-storybook/)
 
 ---
 
@@ -54,7 +63,6 @@ This loads the stories from `./src/components`. A tab should automatically open 
 - Use named exports for all components that we want to surface as a part of the package
 - Fill out the MDX template to ensure all components are well documented
 - Add a unit test for each component added
-
 
 ## Bookkeeping
 
