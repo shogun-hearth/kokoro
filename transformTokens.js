@@ -1,7 +1,7 @@
-import { registerTransform, extend } from 'style-dictionary'
+import StyleDictionary from 'style-dictionary'
 import baseConfig from './config.json'
 
-registerTransform({
+StyleDictionary.registerTransform({
   name: 'size/px',
   type: 'value',
   matcher: token => {
@@ -12,7 +12,7 @@ registerTransform({
   },
 })
 
-registerTransform({
+StyleDictionary.registerTransform({
   name: 'size/percent',
   type: 'value',
   matcher: token => {
@@ -23,6 +23,6 @@ registerTransform({
   },
 })
 
-const StyleDictionaryExtended = extend(baseConfig)
+const StyleDictionaryExtended = StyleDictionary.extend(baseConfig)
 
 StyleDictionaryExtended.buildAllPlatforms()
