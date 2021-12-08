@@ -11,6 +11,14 @@
         {
           "format": "typescript/es6-declarations",
           "destination": "colors.d.ts"
+        },
+        {
+          "format": "javascript/es6",
+          "destination": "spacing.js"
+        },
+        {
+          "format": "typescript/es6-declarations",
+          "destination": "spacing.d.ts"
         }
       ]
     }
