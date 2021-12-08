@@ -21,7 +21,7 @@
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
     "deploy-storybook": "storybook-to-ghpages",
-    "transform-tokens": "node ./transformTokens.ts"
+    "transform-tokens": "node ./scripts/transformTokens.ts"
   },
   "peerDependencies": {
     "react": ">=16"
