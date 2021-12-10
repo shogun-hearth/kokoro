@@ -1,4 +1,4 @@
-import { createTheme, Theme } from '@mui/material/styles';
+import { createTheme, Theme, ThemeOptions } from '@mui/material/styles';
 
 declare module '@mui/material/styles' {
   interface TypographyVariants {
@@ -88,48 +88,46 @@ export const colors: Record<Color, string | undefined> = {
   transparent: undefined,
 };
 
-const theme = createTheme({
-  palette: {
-    common: { ...colors },
-  },
-  typography: {
-    fontFamily: "'Poppins', sans-serif, 'Lora', serif",
-    // TODO(design_system): add responsive sizes for breakpoints
-    h1: {
-      fontSize: pxToRem(24),
-      lineHeight: pxToRem(36),
-    },
-    h2: {
-      fontSize: pxToRem(20),
-      lineHeight: pxToRem(28),
-    },
-    p1: {
-      fontSize: pxToRem(16),
-      lineHeight: pxToRem(24),
-    },
-    p2: {
-      fontSize: pxToRem(14),
-      lineHeight: pxToRem(20),
-    },
-    p3: {
-      fontSize: pxToRem(12),
-      lineHeight: pxToRem(16),
-    },
-    h3: undefined,
-    h4: undefined,
-    h5: undefined,
-    h6: undefined,
-    body1: undefined,
-    subtitle1: undefined,
-    body2: undefined,
-    subtitle2: undefined,
-    caption: undefined,
-    overline: undefined,
-    button: undefined,
-  },
-});
+export const deprecatedTypeset: ThemeOptions['typography'] = {
+  h3: undefined,
+  h4: undefined,
+  h5: undefined,
+  h6: undefined,
+  body1: undefined,
+  subtitle1: undefined,
+  body2: undefined,
+  subtitle2: undefined,
+  caption: undefined,
+  overline: undefined,
+  button: undefined,
+};
 
-theme.components = {
+export const typography: ThemeOptions['typography'] = {
+  fontFamily: "'Poppins', sans-serif, 'Lora', serif",
+  // TODO(design_system): add responsive sizes for breakpoints
+  h1: {
+    fontSize: pxToRem(24),
+    lineHeight: pxToRem(36),
+  },
+  h2: {
+    fontSize: pxToRem(20),
+    lineHeight: pxToRem(28),
+  },
+  p1: {
+    fontSize: pxToRem(16),
+    lineHeight: pxToRem(24),
+  },
+  p2: {
+    fontSize: pxToRem(14),
+    lineHeight: pxToRem(20),
+  },
+  p3: {
+    fontSize: pxToRem(12),
+    lineHeight: pxToRem(16),
+  },
+};
+
+export const componentOverrides: ThemeOptions['components'] = {
   MuiTypography: {
     defaultProps: {
       fontFamily: "'Poppins', sans-serif, 'Lora', serif",
@@ -158,6 +156,18 @@ theme.components = {
     },
   },
 };
+
+
+const theme = createTheme({
+  palette: {
+    common: { ...colors },
+  },
+  components: { ...componentOverrides },
+  typography: {
+    ...typography,
+    ...deprecatedTypeset,
+  },
+});
 
 export default theme;
 
