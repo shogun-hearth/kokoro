@@ -22,6 +22,12 @@ const CardHeader = ({
         &.MuiCardHeader-root {
           padding: 24px 24px ${bottomDivider ? '16px' : 0};
           background-color: ${bg ?? 'inherit'};
+          .MuiCardHeader-action {
+            align-self: center;
+          }
+          .MuiCardHeader-avatar {
+            align-self: center;
+          }
         }
       `}
       title={children}
