@@ -20,4 +20,7 @@ export { default as ImageGrid } from './components/ImageGrid';
 export * from './components/ImageGrid';
 
 export { default as LineItem } from './components/LineItem';
-export *from './components/LineItem';
+export * from './components/LineItem';
+
+export { default as Theme } from './assets/theme';
+export * from './assets/theme';
