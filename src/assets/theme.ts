@@ -158,7 +158,7 @@ export const componentOverrides: ThemeOptions['components'] = {
 };
 
 
-export const theme = {
+export const theme: ThemeOptions = {
   palette: {
     common: { ...colors },
   },
