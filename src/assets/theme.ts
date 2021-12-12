@@ -158,7 +158,7 @@ export const componentOverrides: ThemeOptions['components'] = {
 };
 
 
-const theme = createTheme({
+export const theme = {
   palette: {
     common: { ...colors },
   },
@@ -167,7 +167,7 @@ const theme = createTheme({
     ...typography,
     ...deprecatedTypeset,
   },
-});
+};
 
-export default theme;
+export default createTheme(theme);
 
