@@ -76,45 +76,6 @@ export const colors: Record<Color, string | undefined> = {
   transparent: undefined,
 };
 
-export const deprecatedTypeset: ThemeOptions['typography'] = {
-  h3: undefined,
-  h4: undefined,
-  h5: undefined,
-  h6: undefined,
-  body1: undefined,
-  subtitle1: undefined,
-  body2: undefined,
-  subtitle2: undefined,
-  caption: undefined,
-  overline: undefined,
-  button: undefined,
-};
-
-export const typography: ThemeOptions['typography'] = {
-  fontFamily: "'Poppins', sans-serif, 'Lora', serif",
-  // TODO(design_system): add responsive sizes for breakpoints
-  h1: {
-    fontSize: pxToRem(24),
-    lineHeight: pxToRem(36),
-  },
-  h2: {
-    fontSize: pxToRem(20),
-    lineHeight: pxToRem(28),
-  },
-  p1: {
-    fontSize: pxToRem(16),
-    lineHeight: pxToRem(24),
-  },
-  p2: {
-    fontSize: pxToRem(14),
-    lineHeight: pxToRem(20),
-  },
-  p3: {
-    fontSize: pxToRem(12),
-    lineHeight: pxToRem(16),
-  },
-};
-
 export const componentOverrides: ThemeOptions['components'] = {
   MuiTypography: {
     defaultProps: {
@@ -152,8 +113,28 @@ export const theme: ThemeOptions = {
   },
   components: { ...componentOverrides },
   typography: {
-    ...typography,
-    ...deprecatedTypeset,
+    fontFamily: "'Poppins', sans-serif, serif",
+    // TODO(design_system): add responsive sizes for breakpoints
+    h1: {
+      fontSize: pxToRem(24),
+      lineHeight: pxToRem(36),
+    },
+    h2: {
+      fontSize: pxToRem(20),
+      lineHeight: pxToRem(28),
+    },
+    p1: {
+      fontSize: pxToRem(16),
+      lineHeight: pxToRem(24),
+    },
+    p2: {
+      fontSize: pxToRem(14),
+      lineHeight: pxToRem(20),
+    },
+    p3: {
+      fontSize: pxToRem(12),
+      lineHeight: pxToRem(16),
+    },
   },
 };
 
