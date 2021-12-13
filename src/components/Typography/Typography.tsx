@@ -1,8 +1,7 @@
 import React from 'react';
-import { Theme, Typography as MuiTypography } from '@mui/material';
+import { Typography as MuiTypography } from '@mui/material';
 import { TypographyProps as MuiTypographyProps } from '@mui/material/Typography';
-import { makeStyles } from '@mui/styles';
-import cx from 'classnames';
+import { css } from '@emotion/react';
 
 import colors from '../../assets/colors';
 
@@ -19,18 +18,6 @@ export const fontWeights: FontWeight = {
   semibold: 600,
 };
 
-type StyleProps = {
-  weight?: FontWeightVariant;
-  color?: Color;
-}
-
-const useStyles = makeStyles<Theme, StyleProps>({
-  overrides: ({ weight, color }) => ({
-    fontWeight: weight ? fontWeights[weight] : 'inherit',
-    color: color ? colors[color] : 'inherit',
-  }),
-});
-
 export interface TypographyProps extends MuiTypographyProps {
   weight?: FontWeightVariant;
   color?: Color;
@@ -41,17 +28,16 @@ const Typography = ({
   children,
   color,
   ...props
-}: TypographyProps): JSX.Element => {
-  const classes = useStyles({ weight, color });
-
-  return (
-    <MuiTypography
-      {...props}
-      className={cx(props.className, classes.overrides)}
-    >
-      {children}
-    </MuiTypography>
-  );
-};
+}: TypographyProps): JSX.Element => (
+  <MuiTypography
+    css={css`
+      font-weight: ${weight ? fontWeights[weight] : 'inherit'};
+      color: ${color ? colors[color] : 'inherit'}
+    `}
+    {...props}
+  >
+    {children}
+  </MuiTypography>
+);
 
 export default Typography;

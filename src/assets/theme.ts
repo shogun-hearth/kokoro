@@ -1,4 +1,4 @@
-import { createTheme, Theme, ThemeOptions } from '@mui/material/styles';
+import { createTheme, ThemeOptions } from '@mui/material/styles';
 
 import colors from './colors';
 
@@ -26,11 +26,6 @@ declare module '@mui/material/Typography' {
     // if we need to customize text, we can directly pass sx or wrap with a Box
     inherit: false;
   }
-}
-
-declare module '@mui/styles/defaultTheme' {
-  // eslint-disable-next-line @typescript-eslint/no-empty-interface
-  interface DefaultTheme extends Theme { }
 }
 
 declare module '@mui/material/styles/createPalette' {
