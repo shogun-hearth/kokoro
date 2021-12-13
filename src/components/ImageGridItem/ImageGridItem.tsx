@@ -9,7 +9,7 @@ import BrokenImageOutlinedIcon from '@mui/icons-material/BrokenImageOutlined';
 import { ImageListItemProps as MuiImageListItemProps } from '@mui/material/ImageListItem';
 import { css, SerializedStyles } from '@emotion/react';
 
-import Card from './Card';
+import Card from '../Card';
 
 export interface ImageItem {
   src: string;

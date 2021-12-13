@@ -4,7 +4,7 @@ import { Box } from '@mui/material';
 import { withDesign } from 'storybook-addon-designs';
 
 import Typography, { TypographyProps, fontWeights } from './Typography';
-import theme from '../assets/theme';
+import theme from '../../assets/theme';
 
 export const argTypes = {
   color: {

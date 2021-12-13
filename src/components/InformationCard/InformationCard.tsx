@@ -1,9 +1,9 @@
 import { css } from '@emotion/react';
 
-import Card from './Card';
-import CardHeader from './CardHeader';
-import CardContent from './CardContent';
-import Typography from './Typography';
+import Card from '../Card';
+import CardHeader from '../CardHeader';
+import CardContent from '../CardContent';
+import Typography from '../Typography';
 
 export interface InformationCardProps {
   title: string;

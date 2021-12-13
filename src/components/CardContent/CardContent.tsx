@@ -3,7 +3,7 @@ import { CardContent as MuiCardContent } from '@mui/material';
 import { css, SerializedStyles } from '@emotion/react';
 import { CardContentProps as MuiCardContentProps } from '@mui/material/CardContent';
 
-import { CardColorProperty } from './Card';
+import { CardColorProperty } from '../Card/Card';
 
 export interface CardContentProps extends Omit<MuiCardContentProps, 'css'>,
   CardColorProperty {

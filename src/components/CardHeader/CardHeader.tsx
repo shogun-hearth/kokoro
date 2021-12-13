@@ -3,7 +3,7 @@ import { CardHeader as MuiCardHeader, Divider } from '@mui/material';
 import { css } from '@emotion/react';
 import { CardHeaderProps as MuiCardHeaderProps } from '@mui/material/CardHeader';
 
-import { CardColorProperty } from './Card';
+import { CardColorProperty } from '../Card/Card';
 
 export interface CardHeaderProps extends MuiCardHeaderProps, CardColorProperty {
   bottomDivider?: boolean;

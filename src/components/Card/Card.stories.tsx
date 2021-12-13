@@ -3,10 +3,10 @@ import { withDesign } from 'storybook-addon-designs';
 import { ArgType } from '@storybook/components';
 
 import Card, { CardProps } from './Card';
-import CardHeader from './CardHeader';
-import CardContent from './CardContent';
+import CardHeader from '../CardHeader';
+import CardContent from '../CardContent';
 
-import theme from '../assets/theme';
+import theme from '../../assets/theme';
 
 export const argTypes = {
   border: {

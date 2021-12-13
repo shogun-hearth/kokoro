@@ -2,7 +2,7 @@ import React from 'react';
 import { Box } from '@mui/material';
 import { css } from '@emotion/react';
 
-import Typography from './Typography';
+import Typography from '../Typography';
 
 export interface LineItemProps {
   /* left side element */
