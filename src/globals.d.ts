@@ -1,3 +1,5 @@
+declare type ColorValue = 100 | 300 | 500 | 700 | 900;
+
 declare type Color =
   'inherit' |
   'transparent'|

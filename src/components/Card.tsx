@@ -3,7 +3,7 @@ import { Card as MuiCard } from '@mui/material';
 import { css } from '@emotion/react';
 import { CardProps as MuiCardProps } from '@mui/material/Card';
 
-import { colors } from '../assets/theme';
+import colors from '../assets/colors';
 
 export interface CardColorProperty {
   border?: Color;

@@ -24,3 +24,5 @@ export * from './components/LineItem';
 
 export { default as Theme } from './assets/theme';
 export * from './assets/theme';
+
+export { default as colors } from './assets/colors';

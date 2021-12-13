@@ -4,7 +4,7 @@ import { TypographyProps as MuiTypographyProps } from '@mui/material/Typography'
 import { makeStyles } from '@mui/styles';
 import cx from 'classnames';
 
-import { colors } from '../assets/theme';
+import colors from '../assets/colors';
 
 export type FontWeightVariant = 'regular' | 'medium' | 'semibold';
 export type FontWeightValue = 400 | 500 | 600;
