@@ -21,18 +21,6 @@ declare module '@mui/material/Typography' {
     p1: true;
     p2: true;
     p3: true;
-    // disable unused variants
-    h3: false;
-    h4: false;
-    h5: false;
-    h6: false;
-    body1: false;
-    subtitle1: false;
-    body2: false;
-    subtitle2: false;
-    caption: false;
-    overline: false;
-    button: false;
     // if we need to customize text, we can directly pass sx or wrap with a Box
     inherit: false;
   }
