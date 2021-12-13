@@ -30,7 +30,10 @@
     "@emotion/styled": "^11.3.0",
     "@mui/icons-material": "^5.1.1",
     "@mui/material": "^5.1.0",
-    "@mui/styles": "^5.1.0"
+    "@mui/styles": "^5.1.0",
+    "@types/node": "^14.0.13",
+    "@types/react": "^17.0.34",
+    "@types/react-dom": "^17.0.10"
   },
   "husky": {
     "hooks": {
@@ -72,10 +75,7 @@
     "@storybook/manager-webpack5": "^6.3.12",
     "@storybook/react": "^6.3.12",
     "@storybook/storybook-deployer": "^2.8.10",
-    "@types/node": "^16.11.7",
-    "@types/react": "^17.0.34",
     "@types/mdx": "^2.0.1",
-    "@types/react-dom": "^17.0.10",
     "@typescript-eslint/eslint-plugin": "^4.21.0",
     "@typescript-eslint/parser": "^4.21.0",
     "babel-loader": "^8.1.0",
