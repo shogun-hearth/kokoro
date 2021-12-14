@@ -48,7 +48,7 @@
   },
   "name": "hearth-kokoro",
   "author": "Sondhayni",
-  "module": "dist/kokoro.esm.js",
+  "module": "dist/hearth-kokoro.esm.js",
   "size-limit": [
     {
       "path": "dist/hearth-kokoro.cjs.production.min.js",
