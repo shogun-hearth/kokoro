@@ -6,14 +6,14 @@ import Card, { CardProps } from './Card';
 import CardHeader from '../CardHeader';
 import CardContent from '../CardContent';
 
-import theme from '../../assets/theme';
+import colors from 'assets/colors';
 
 export const argTypes = {
   border: {
     name: 'border color',
     control: { type: 'select' },
     defaultValue: 'basic500',
-    options: Object.keys({ ...theme.palette.common }),
+    options: Object.keys({ ...colors }),
     table: {
       category: 'Card',
       type: {
@@ -25,7 +25,7 @@ export const argTypes = {
     name: 'fill',
     value: 'basic1100',
     control: 'select',
-    options: Object.keys({ ...theme.palette.common }),
+    options: Object.keys({ ...colors }),
     table: {
       type: {
         summary: 'a color'
